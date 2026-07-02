@@ -1,10 +1,10 @@
 name: Detection CI
 
 on:
-  pull_request:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   validate-detections:
@@ -21,9 +21,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install sigma-cli yamllint
+          pip install -r requirements.txt
 
-      - name: Lint YAML files
+      - name: Lint Sigma YAML files
         run: |
           yamllint detections/sigma
 
