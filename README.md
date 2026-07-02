@@ -59,3 +59,31 @@ sigma check detections/sigma
 ## Aprendizados
 
 Este projeto conecta práticas de DevOps e Blue Team, demonstrando como regras de detecção podem ser mantidas com versionamento, revisão e automação.
+
+## Current maturity level
+
+Este projeto concluiu o Nível 1:
+
+- Regras Sigma iniciais
+- Validação local
+- Pipeline CI/CD
+- README inicial
+
+Agora está evoluindo para o Nível 2:
+
+- Logs de exemplo
+- Documentação por regra
+- Análise de falso positivo
+- Plano de teste
+- Checklist de revisão
+
+## Detection Engineering Workflow
+
+1. Criar ou alterar regra Sigma.
+2. Validar sintaxe localmente.
+3. Validar regra com sigma-cli.
+4. Adicionar log de exemplo.
+5. Documentar falsos positivos.
+6. Abrir Pull Request.
+7. Aguardar pipeline CI/CD.
+8. Fazer merge após validação.
