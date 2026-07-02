@@ -1,38 +1,61 @@
 # Detection-as-Code Lab
 
+Projeto prático de Detection Engineering usando regras Sigma versionadas em Git e validação automatizada com CI/CD.
+
 ## Objetivo
-Explicar o objetivo do projeto.
+
+O objetivo deste laboratório é aplicar práticas de DevOps ao ciclo de vida de regras de detecção em segurança, criando um fluxo simples de Detection-as-Code.
 
 ## O que é Detection-as-Code?
-Explicar com suas palavras.
 
-## Arquitetura do projeto
-Mostrar o fluxo:
-Logs -> Regras Sigma -> Validação CI/CD -> Conversão/adaptação -> SIEM/Wazuh
+Detection-as-Code é a prática de tratar regras de detecção como código: elas são versionadas, revisadas, testadas e validadas automaticamente antes de serem usadas em um ambiente de segurança.
 
 ## Tecnologias usadas
+
 - Sigma
 - GitHub Actions
+- Python
+- sigma-cli
 - yamllint
-- Wazuh
-- Linux logs
-- Windows/Sysmon logs, se usar
+- Git/GitHub
 
+## Estrutura
+
+```text
+detections/
+|  sigma/
+|  |    linux_failed_ssh_login.yml
+|  |    windows_powershell_remote_download.yml
+|  |    suspicious_dns_long_query.yml
+|.github/
+|   |   workflows/
+|   |   |   detection-ci.yml
+```
 ## Regras implementadas
-Tabela com:
-Nome | Técnica | Fonte de log | Severidade | Status
+|Regra|Fonte de log|Objetivo|Severidade|
+|-|-|-|-|
+|Linux Failed SSH Login Attempt	|Linux/SSHD|	Detectar falhas de login SSH|	Medium
+Suspicious PowerShell Remote Download|Windows/Process Creation|	Detectar PowerShell baixando conteúdo remoto|High
+|Suspicious Long DNS Query|	DNS	|Detectar consultas DNS anormalmente longas|Medium
 
 ## Pipeline CI/CD
-Explicar o que valida.
 
-## Como testar
-Passo a passo.
+A pipeline executa validações automáticas nas regras:
+
+ - Validação de sintaxe YAML com yamllint.
+ - Validação das regras Sigma com sigma check.
+
+### Como rodar localmente
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+yamllint detections/sigma
+sigma check detections/sigma
+```
 
 ## Aprendizados
-O que você aprendeu sobre Blue Team, DevOps e SOC.
 
-## Próximos passos
-- Mais regras
-- Testes automatizados
-- Conversão para Wazuh/Elastic/Splunk
-- Integração com ambiente SIEM real
+Este projeto conecta práticas de DevOps e Blue Team, demonstrando como regras de detecção podem ser mantidas com versionamento, revisão e automação.
