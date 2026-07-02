@@ -1,0 +1,28 @@
+---
+title: Linux Failed SSH Login Attempt
+# Criado usando uuidgen no terminal linux,
+# apenas para fins de identificação do alerta
+id: 0513f968-0a31-471b-9ebc-92441159d4fb
+# Importante: O status experimental indica que
+# a detecção ainda está em fase de testes e pode
+# gerar falsos positivos. Use com cautela.
+status: experimental
+description: Detects failed SSH login attempts on Linux systems.
+author: Hugo Kersbaumer
+date: 2026-06-30
+tags:
+  - attack.credential-access
+  - attack.t1110
+logsource:
+  product: linux
+  service: sshd
+detection:
+  selection:
+    message|contains:
+      - "Failed password"
+      - "Invalid user"
+  condition: selection
+falsepositives:
+  - Legitimate users mistyping passwords
+  - Administrative testing
+level: medium
