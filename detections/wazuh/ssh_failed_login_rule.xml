@@ -1,0 +1,13 @@
+<group name="local,syslog,sshd,authentication_failed,">
+  <rule id="100101" level="7">
+    <if_sid>5710</if_sid>
+    <description>Project custom rule - SSH authentication failure detected</description>
+    <group>authentication_failed,ssh_failed_login,</group>
+  </rule>
+  <rule id="100102" level="10" frequency="5" timeframe="120">
+    <if_matched_sid>100101</if_matched_sid>
+    <same_source_ip />
+    <description>CUSTOM LAB RULE - Possible SSH brute force from same source IP</description>
+    <group>authentication_failed,ssh_bruteforce,custom_lab,</group>
+  </rule>
+</group>
