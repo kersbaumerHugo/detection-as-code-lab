@@ -1,0 +1,4 @@
+2026-06-30T10:21:11Z client=192.168.56.15 query=ajshd9283hdjshd9283hdjshd9283hdjshd9283hdjshd9283.example.com type=A
+2026-06-30T10:21:13Z client=192.168.56.15 query=92ksla82ksla82ksla82ksla82ksla82ksla82ksla82ksla.example.com type=A
+2026-06-30T10:21:15Z client=192.168.56.15 query=eyJ1c2VyIjoiYWRtaW4iLCJob3N0Ijoid29ya3N0YXRpb24ifQ.example.com type=TXT
+2026-06-30T10:21:18Z client=192.168.56.15 query=dGhpc2lzYWxvbmdzdHJpbmd0ZXN0Zm9yZG5zdHVubmVsaW5n.example.com type=A
